@@ -1,4 +1,4 @@
-
+"use client";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./page.module.css";
 
