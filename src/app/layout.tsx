@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <head>
+      <body className="min-h-full flex flex-col">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZZ7RRYD9BK"
           strategy="afterInteractive"
@@ -44,8 +44,8 @@ export default function RootLayout({
             gtag('config', 'G-ZZ7RRYD9BK');
           `}
         </Script>
-      </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+        {children}
+      </body>
     </html>
   );
 }
