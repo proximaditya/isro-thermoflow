@@ -380,7 +380,9 @@ export default function InterpolatorPage() {
       const { Client } = await import("@gradio/client");
 
       setTerminalText((prev) => prev + "[SYS] Connecting to maxiu-uzumaki/satellite-interpolator-api...\n");
-      const client = await Client.connect("maxiu-uzumaki/satellite-interpolator-api");
+      const client = await Client.connect("maxiu-uzumaki/satellite-interpolator-api", {
+        hf_token: process.env.NEXT_PUBLIC_HF_TOKEN
+      } as any);
 
       setTerminalText((prev) => prev + "[SYS] Connection established. Uploading frames...\n");
       setTerminalText((prev) => prev + `[DATA] Frame 1: ${file1.name} (${(file1.size / 1024).toFixed(1)} KB)\n`);
